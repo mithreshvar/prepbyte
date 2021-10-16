@@ -1,0 +1,48 @@
+//coding in c
+
+#include <stdio.h>
+
+int main()
+{
+  // write your code here
+  int n,i,j,count = 0;
+  scanf("%d",&n);
+  int a[n],b[n],c[n];
+  for(i=0;i<n;i++){
+      scanf("%d",&a[i]);
+  }
+  for(i=0;i<n;i++){
+      scanf("%d",&b[i]);
+  }
+  for(i=0;i<n;i++){
+      scanf("%d",&c[i]);
+  }
+  for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+      int z = c[j];
+      if(a[i] == b[z-1]){
+        count+=1;
+      }
+    }
+  }
+  printf("%d",count);
+  return 0;
+}
+
+
+//coding in python
+
+n = int(input())
+a = []
+b = []
+c = []
+a=[int(k) for k in input().split(" ")]
+b=[int(k) for k in input().split(" ")]
+c=[int(k) for k in input().split(" ")]
+ans = 0
+for x in range(n):
+  for y in range(n):
+    print(a[x],c[y],b[(c[y])-1])
+    if(a[x]==b[(c[y])-1]):
+      ans+=1
+print(ans)
