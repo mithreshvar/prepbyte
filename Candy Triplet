@@ -1,0 +1,16 @@
+n = int(input())
+a = [int(x) for x in input().split(" ")]
+final = []
+temp = 0
+l = len(a)
+num = set(a)
+for x in range(l):
+  for y in num:
+    i = x
+    if a[x]>=y:
+      while i<l and a[i]>=y:
+        temp += y
+        i+=1
+      final.append(temp)
+      temp=0
+print(max(final))
